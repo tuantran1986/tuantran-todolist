@@ -28,14 +28,14 @@ const ButtonSort = () => {
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li onClick={() =>{clickSaveSortTypeToState('ten_tangdan')}}>
-                            <a role="button">
+                            <a role="button" href='/#'>
                                 <span className={(sortType === 'ten_tangdan')?('activeSort fa fa-sort-alpha-asc pr-5'):('fa fa-sort-alpha-asc pr-5')} >
                                     Tên A-Z
                                 </span>
                             </a>
                         </li>
                         <li onClick={() =>{clickSaveSortTypeToState('ten_giamdan')}}>
-                            <a role="button">
+                            <a role="button" href='/#'>
                                 <span className={(sortType === 'ten_giamdan')?('activeSort fa fa-sort-alpha-desc pr-5'):('fa fa-sort-alpha-desc pr-5')} >
                                     Tên Z-A
                                 </span>
@@ -43,12 +43,12 @@ const ButtonSort = () => {
                         </li>
                         <li role="separator" className="divider" />
                         <li onClick={() =>{clickSaveSortTypeToState('trangthai_kichhoat')}}>
-                            <a role="button" className={(sortType === 'trangthai_kichhoat')?('activeSort'):('')} >
+                            <a role="button" className={(sortType === 'trangthai_kichhoat')?('activeSort'):('')} href='/#' >
                                 Trạng Thái Kích Hoạt
                             </a>
                         </li>
                         <li onClick={() =>{clickSaveSortTypeToState('trangthai_an')}}>
-                            <a role="button" className={(sortType === 'trangthai_an')?('activeSort'):('')} >Trạng Thái Ẩn</a>
+                            <a role="button" className={(sortType === 'trangthai_an')?('activeSort'):('')} href='/#'>Trạng Thái Ẩn</a>
                         </li>
                     </ul>
                 </div>

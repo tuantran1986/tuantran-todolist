@@ -65,28 +65,28 @@ const TableTask = () => {
             taskList.sort((a, b) => {
                 if (a.name > b.name) return 1;
                 if (a.name < b.name) return -1;
-                if (a.name === b.name) return 0;
+                return 0;
             })
             break;
         case 'ten_giamdan':
             taskList.sort((a, b) => {
                 if (a.name > b.name) return -1;
                 if (a.name < b.name) return 1;
-                if (a.name === b.name) return 0;
+                return 0;
             })
             break;
         case 'trangthai_an':
             taskList.sort((a, b) => {
                 if (a.status > b.status) return 1;
                 if (a.status < b.status) return -1;
-                if (a.status === b.status) return 0;
+                return 0;
             })
             break;
         case 'trangthai_kichhoat':
             taskList.sort((a, b) => {
                 if (a.status > b.status) return -1;
                 if (a.status < b.status) return 1;
-                if (a.status === b.status) return 0;
+                return 0;
             })
             break;
 
