@@ -63,7 +63,15 @@ export const taskReducer = (state = taskInitialState, action) => {
             let dataLoad = JSON.parse(localStorage.getItem('todo_redux_hook_1'));
             MAKE_ID_REDUX_HOOK_1 = JSON.parse(localStorage.getItem('MAKE_ID_REDUX_HOOK_1'));
 
-            state = { ...dataLoad };
+            // CYDB - khi load data - chỉ load : TASKLIST ; những phần còn lại của INITIALSTATE không đổi
+            state = { ...dataLoad, displayForm: true,
+                taskEditting: {
+                    id: null,
+                    name: '',
+                    status: true
+                },
+                keySearch: '',
+                sortType: 'ten_tangdan'};
             return state;
 
         case type.ADD_OR_EDIT_TASK:
