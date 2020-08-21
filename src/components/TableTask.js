@@ -60,39 +60,42 @@ const TableTask = () => {
     }
 
     // 4.SORT - sortType
-    switch (sortType) {
-        case 'ten_tangdan':
-            taskList.sort((a, b) => {
-                if (a.name > b.name) return 1;
-                if (a.name < b.name) return -1;
-                return 0;
-            })
-            break;
-        case 'ten_giamdan':
-            taskList.sort((a, b) => {
-                if (a.name > b.name) return -1;
-                if (a.name < b.name) return 1;
-                return 0;
-            })
-            break;
-        case 'trangthai_an':
-            taskList.sort((a, b) => {
-                if (a.status > b.status) return 1;
-                if (a.status < b.status) return -1;
-                return 0;
-            })
-            break;
-        case 'trangthai_kichhoat':
-            taskList.sort((a, b) => {
-                if (a.status > b.status) return -1;
-                if (a.status < b.status) return 1;
-                return 0;
-            })
-            break;
+    if (taskList) {
+        switch (sortType) {
+            case 'ten_tangdan':
+                taskList.sort((a, b) => {
+                    if (a.name > b.name) return 1;
+                    if (a.name < b.name) return -1;
+                    return 0;
+                })
+                break;
+            case 'ten_giamdan':
+                taskList.sort((a, b) => {
+                    if (a.name > b.name) return -1;
+                    if (a.name < b.name) return 1;
+                    return 0;
+                })
+                break;
+            case 'trangthai_an':
+                taskList.sort((a, b) => {
+                    if (a.status > b.status) return 1;
+                    if (a.status < b.status) return -1;
+                    return 0;
+                })
+                break;
+            case 'trangthai_kichhoat':
+                taskList.sort((a, b) => {
+                    if (a.status > b.status) return -1;
+                    if (a.status < b.status) return 1;
+                    return 0;
+                })
+                break;
 
-        default:    // all = -1
-            break;
+            default:    // all = -1
+                break;
+        }
     }
+
     // RENDER - RETURN
     return (
         <>
@@ -123,11 +126,11 @@ const TableTask = () => {
                         </tr>
                         {/* TASK ITEM */}
                         {
-                            (taskList) 
-                            ?
-                            (taskList.map((task, index) => (<TaskItem key={index} index={index} id={task.id} name={task.name} status={task.status} />))) 
-                            :
-                            (null)                          
+                            (taskList)
+                                ?
+                                (taskList.map((task, index) => (<TaskItem key={index} index={index} id={task.id} name={task.name} status={task.status} />)))
+                                :
+                                (null)
                         }
                         {/* HẾT - TASK ITEM */}
                     </tbody>
