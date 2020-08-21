@@ -20,16 +20,15 @@ const taskInitialState = {
         name: '',
         status: true
     },
-    keySearch:'',
-    sortType:'ten_tangdan'
+    keySearch: '',
+    sortType: 'ten_tangdan'
 }
 
 export const taskReducer = (state = taskInitialState, action) => {
     switch (action.type) {
         case type.TOGGLE_DISPLAY_FORM:
-            if (state.taskEditting.id === null) {
-                state = { ...state, displayForm: !state.displayForm };
-            } else {
+            if (state.taskEditting.id) {
+                // EDIT
                 state = {
                     ...state, displayForm: true, taskEditting: {
                         id: null,
@@ -37,6 +36,9 @@ export const taskReducer = (state = taskInitialState, action) => {
                         status: true
                     }
                 };
+            } else {
+                // state.taskEditting.id) === null - ADD
+                state = { ...state, displayForm: !state.displayForm };
             }
 
             return state;
@@ -63,7 +65,7 @@ export const taskReducer = (state = taskInitialState, action) => {
 
             state = { ...dataLoad };
             return state;
-            
+
         case type.ADD_OR_EDIT_TASK:
 
             // ID === NULL : ADD
@@ -144,7 +146,7 @@ export const taskReducer = (state = taskInitialState, action) => {
                     status: state.taskList[indexUpdate].status,
                 }
                 let newState = {
-                    ...state, taskEditting: newTaskEditting , displayForm: true 
+                    ...state, taskEditting: newTaskEditting, displayForm: true
                 };
 
                 localStorage.setItem('todo_redux_hook_1', JSON.stringify(newState));
