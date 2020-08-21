@@ -14,7 +14,7 @@ const ButtonAdd = () => {
     // RENDER -
     return (
         <>
-            <button type="button" className="btn btn-primary" onClick={() => { dispatch(toggleDisplayFormAction()) }} >
+            <button type="button" className="btn btn-primary mr-5" onClick={() => { dispatch(toggleDisplayFormAction()) }} >
                 <span className="fa fa-plus mr-5" />
                 Thêm Công Việc
             </button>

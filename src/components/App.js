@@ -5,6 +5,7 @@ import ButtonGenerate from './ButtonGenerate';
 import ButtonSearch from './ButtonSearch';
 import ButtonSort from './ButtonSort';
 import TableTask from './TableTask';
+import './App.css';
 // import
 import { useSelector, useDispatch } from 'react-redux';
 import { loadDataAction } from '../reduxFile/actions';

@@ -11,8 +11,8 @@ const ButtonGenerate = () => {
     // RENDER - RETURN :
     return (
         <>
-            <button type="button" className="btn btn-success" style={{marginLeft:'5px'}} onClick={() => { dispatch(generateDataAction()) }}>
-                <span className="fa fa-plus mr-5" />GENERATE_DATA
+            <button type="button" className="btn btn-success" onClick={() => { dispatch(generateDataAction()) }}>
+                <span className="fa fa-cog mr-5" />GENERATE / RESET_DATA
             </button>
         </>
     );
